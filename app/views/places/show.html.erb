@@ -1,0 +1,16 @@
+<h1><%= @place.name %></h1>
+
+<a href="/places">Back to all places</a>
+
+<h2>Journal Entries</h2>
+
+<ul>
+  <% @entries.each do |entry| %>
+    <li>
+      <strong><%= entry.title %></strong> (<%= entry.occurred_on %>)
+      <p><%= entry.description %></p>
+    </li>
+  <% end %>
+</ul>
+
+<a href="/entries/new?place_id=<%= @place.id %>">Log a new entry</a>
